@@ -38,13 +38,13 @@ pipeline {
     }
 
     stage('Deploy to Nexus') {
-      steps {
+    steps {
         withMaven(globalMavenSettingsConfig: 'settings.xml', jdk: 'JDK17', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
-    // some block
-    sh 'mvn deploy'
+            // some block
+            sh 'mvn deploy'
         }
-      }
     }
+}
 
 
   post {
